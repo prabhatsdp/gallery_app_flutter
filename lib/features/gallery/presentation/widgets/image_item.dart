@@ -10,59 +10,44 @@ class ImageItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      surfaceTintColor: Colors.white,
-      type: MaterialType.transparency,
-      child: InkWell(
-        radius: 16.0,
-        customBorder: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(
-            Radius.circular(16.0),
-          ),
+    return Container(
+      decoration: const BoxDecoration(
+        borderRadius: BorderRadius.all(
+          Radius.circular(20.0),
         ),
-        onTap: () {
-          logger.d("Clicked image ${image.id}");
-          context.push(
-            "/details",
-            extra: {"image": image},
-          );
-        },
-        child: Padding(
-          padding: const EdgeInsets.all(12.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              AspectRatio(
-                aspectRatio: 1.0,
-                child: Container(
-                  decoration: const BoxDecoration(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(20.0),
-                    ),
-                  ),
-                  clipBehavior: Clip.hardEdge,
-                  child: FadeInImage(
-                    fadeInDuration: const Duration(milliseconds: 300),
-                    fadeOutDuration: const Duration(milliseconds: 10),
-                    fadeInCurve: decelerateEasing,
-                    fadeOutCurve: accelerateEasing,
-                    fit: BoxFit.cover,
-                    placeholder:
-                        const AssetImage("assets/images/placeholder.png"),
-                    image: NetworkImage(image.imageThumbnail),
-                  ),
-                ),
-              ),
-              Row(
-                children: [
-                  Text("@${image.firstName}"),
-                  const Spacer(),
-                  Text("${image.likes}")
-                ],
-              ),
-            ],
+      ),
+      clipBehavior: Clip.hardEdge,
+      child: Stack(
+        children: [
+          Positioned.fill(
+            child: FadeInImage(
+              fadeInDuration: const Duration(milliseconds: 300),
+              fadeOutDuration: const Duration(milliseconds: 10),
+              fadeInCurve: decelerateEasing,
+              fadeOutCurve: accelerateEasing,
+              fit: BoxFit.cover,
+              placeholder: const AssetImage("assets/images/placeholder.png"),
+              image: NetworkImage(image.imageThumbnail),
+            ),
           ),
-        ),
+          Material(
+            type: MaterialType.transparency,
+            child: InkWell(
+              radius: 16.0,
+              splashColor: Colors.black.withAlpha(80),
+              highlightColor: Colors.black.withAlpha(70),
+              onTap: () {
+                logger.d("Clicked image ${image.id}");
+                context.push(
+                  "/details",
+                  extra: {
+                    "image": image,
+                  },
+                );
+              },
+            ),
+          ),
+        ],
       ),
     );
   }
