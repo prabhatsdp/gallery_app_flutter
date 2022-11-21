@@ -25,15 +25,16 @@ class ImageGrid extends StatelessWidget {
           child: GridView.builder(
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
-              mainAxisSpacing: 16.0,
-              crossAxisSpacing: 16.0,
+              mainAxisSpacing: 4.0,
+              crossAxisSpacing: 4.0,
+              childAspectRatio: 0.8
             ),
             controller: controller,
-            padding: const EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(8.0),
             itemCount: images.length,
             physics: const BouncingScrollPhysics(),
             itemBuilder: (BuildContext context, int index) {
-              return ImageItem(imageUrl: images[index].imageThumbnail);
+              return ImageItem(image: images[index]);
             },
           ),
         ),

@@ -1,5 +1,3 @@
-
-import 'package:flutter/material.dart';
 import 'package:gallery_app/core/data/dtos/urls_dto.dart';
 import 'package:gallery_app/core/data/dtos/user_dto.dart';
 import 'package:gallery_app/features/gallery/domain/models/image_model.dart';
@@ -33,10 +31,19 @@ class ImageDto {
     this.altDesc,
   });
 
-  factory ImageDto.fromJson(Map<String, dynamic> json) => _$ImageDtoFromJson(json);
+  factory ImageDto.fromJson(Map<String, dynamic> json) =>
+      _$ImageDtoFromJson(json);
+
   Map<String, dynamic> toJson() => _$ImageDtoToJson(this);
 
-  ImageModel toDomain() => ImageModel(id, urls.full, urls.thumb);
+  ImageModel toDomain() => ImageModel(
+        id: id,
+        imageLarge: urls.regular,
+        imageThumbnail: urls.thumb,
+        userName: user.username,
+        likes: likes,
+        firstName: user.firstName ?? "Unknown",
+      );
 
   @override
   String toString() {

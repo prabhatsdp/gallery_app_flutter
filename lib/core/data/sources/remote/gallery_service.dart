@@ -5,6 +5,7 @@ import 'package:flutter/foundation.dart';
 import 'package:gallery_app/core/data/utils/exceptions.dart';
 import 'package:gallery_app/core/data/utils/logging.dart';
 import 'package:gallery_app/core/data/utils/network_response.dart';
+import 'package:gallery_app/features/environment.dart';
 import 'package:logger/logger.dart';
 
 enum Method { POST, GET, PUT, DELETE, PATCH }
@@ -165,10 +166,11 @@ class GalleryService {
   InterceptorsWrapper _authInterceptor() {
     return InterceptorsWrapper(
       onRequest: (options, handler) {
+        logger.i("API_KEY ==> ${Environment.apiKey}");
         options.headers.putIfAbsent(
             "Authorization",
                 () =>
-            "Client-ID YOUR_API_ACCESS_KEY_HERE");
+            "Client-ID ${Environment.apiKey}");
         return handler.next(options);
       },
     );

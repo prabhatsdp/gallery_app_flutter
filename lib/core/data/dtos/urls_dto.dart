@@ -6,7 +6,7 @@ part 'urls_dto.g.dart';
 class UrlsDto {
   String? raw;
   String full;
-  String? regular;
+  String regular;
   String? small;
   String thumb;
   @JsonKey(name: "small_s3")
@@ -15,7 +15,7 @@ class UrlsDto {
   UrlsDto({
     this.raw,
     required this.full,
-    this.regular,
+    required this.regular,
     this.small,
     this.smallS3,
     required this.thumb,

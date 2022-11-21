@@ -9,7 +9,7 @@ part of 'urls_dto.dart';
 UrlsDto _$UrlsDtoFromJson(Map<String, dynamic> json) => UrlsDto(
       raw: json['raw'] as String?,
       full: json['full'] as String,
-      regular: json['regular'] as String?,
+      regular: json['regular'] as String,
       small: json['small'] as String?,
       smallS3: json['small_s3'] as String?,
       thumb: json['thumb'] as String,
