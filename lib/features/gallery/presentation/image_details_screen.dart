@@ -10,6 +10,9 @@ class ImageDetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
+      appBar: AppBar(
+        title: const Text("Full Image"),
+      ),
       body: SafeArea(
         child: image != null ? _imageDetails(image!) : _errorView(),
       ),
