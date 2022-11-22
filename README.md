@@ -38,6 +38,10 @@ Libraries/Tools | Version | Used For |
 [build_runner](https://pub.dev/packages/build_runner) | ^2.3.2 | For code generation |
 [json_serializable](https://pub.dev/packages/json_serializable) | ^6.5.4 | For JSON to class generation |
 
+
+<img src="https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif" width="40" height="40" />
+
+
 A few resources to get you started if this is your first Flutter project:
 
 - [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
