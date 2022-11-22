@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:gallery_app/features/gallery/presentation/widgets/image_item.dart';
 
 import '../../domain/models/image_model.dart';
@@ -24,11 +23,10 @@ class ImageGrid extends StatelessWidget {
           height: MediaQuery.of(context).size.height,
           child: GridView.builder(
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              mainAxisSpacing: 24.0,
-              crossAxisSpacing: 24.0,
-              childAspectRatio: 0.8
-            ),
+                crossAxisCount: 2,
+                mainAxisSpacing: 24.0,
+                crossAxisSpacing: 24.0,
+                childAspectRatio: 0.8),
             controller: controller,
             padding: const EdgeInsets.all(24.0),
             itemCount: images.length,
