@@ -6,8 +6,8 @@ A practice gallery app developed using Flutter.
 
 Clone this repository by running below command from command line.
 <br/><br/>
-```
-$ git clone https://github.com/prabhatsdp/gallery_app_flutter.git
+```bash
+git clone https://github.com/prabhatsdp/gallery_app_flutter.git
 ```
 <br/><br/>
 
