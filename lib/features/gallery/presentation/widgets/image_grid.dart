@@ -20,18 +20,17 @@ class ImageGrid extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Container(
+        SizedBox(
           height: MediaQuery.of(context).size.height,
-          color: Colors.white,
           child: GridView.builder(
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
-              mainAxisSpacing: 16.0,
-              crossAxisSpacing: 16.0,
+              mainAxisSpacing: 24.0,
+              crossAxisSpacing: 24.0,
               childAspectRatio: 0.8
             ),
             controller: controller,
-            padding: const EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(24.0),
             itemCount: images.length,
             physics: const BouncingScrollPhysics(),
             itemBuilder: (BuildContext context, int index) {

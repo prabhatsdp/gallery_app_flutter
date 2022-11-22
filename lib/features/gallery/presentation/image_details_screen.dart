@@ -22,14 +22,17 @@ class ImageDetailsScreen extends StatelessWidget {
         Align(
           alignment: Alignment.center,
           widthFactor: 1,
-          child: FadeInImage(
-            fadeInDuration: const Duration(milliseconds: 300),
-            fadeOutDuration: const Duration(milliseconds: 10),
-            fadeInCurve: decelerateEasing,
-            fadeOutCurve: accelerateEasing,
-            fit: BoxFit.cover,
-            placeholder: const AssetImage("assets/images/placeholder.png"),
-            image: NetworkImage(img.imageLarge),
+          child: Hero(
+            tag: img.id,
+            child: FadeInImage(
+              fadeInDuration: const Duration(milliseconds: 300),
+              fadeOutDuration: const Duration(milliseconds: 10),
+              fadeInCurve: decelerateEasing,
+              fadeOutCurve: accelerateEasing,
+              fit: BoxFit.cover,
+              placeholder: const AssetImage("assets/images/placeholder.png"),
+              image: NetworkImage(img.imageLarge),
+            ),
           ),
         )
       ],

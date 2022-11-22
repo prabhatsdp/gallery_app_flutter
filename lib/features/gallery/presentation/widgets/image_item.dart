@@ -11,23 +11,33 @@ class ImageItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(
-        borderRadius: BorderRadius.all(
+      decoration: BoxDecoration(
+        borderRadius: const BorderRadius.all(
           Radius.circular(20.0),
         ),
+        boxShadow: [
+          BoxShadow(
+            offset: const Offset(4.0, 4.0),
+            color: Color(image.hexColor()),
+            blurRadius: 24.0
+          ),
+        ]
       ),
       clipBehavior: Clip.hardEdge,
       child: Stack(
         children: [
           Positioned.fill(
-            child: FadeInImage(
-              fadeInDuration: const Duration(milliseconds: 300),
-              fadeOutDuration: const Duration(milliseconds: 10),
-              fadeInCurve: decelerateEasing,
-              fadeOutCurve: accelerateEasing,
-              fit: BoxFit.cover,
-              placeholder: const AssetImage("assets/images/placeholder.png"),
-              image: NetworkImage(image.imageThumbnail),
+            child: Hero(
+              tag: image.id,
+              child: FadeInImage(
+                fadeInDuration: const Duration(milliseconds: 300),
+                fadeOutDuration: const Duration(milliseconds: 10),
+                fadeInCurve: decelerateEasing,
+                fadeOutCurve: accelerateEasing,
+                fit: BoxFit.cover,
+                placeholder: const AssetImage("assets/images/placeholder.png"),
+                image: NetworkImage(image.imageThumbnail),
+              ),
             ),
           ),
           Material(

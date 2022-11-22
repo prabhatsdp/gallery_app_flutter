@@ -43,6 +43,7 @@ class ImageDto {
         userName: user.username,
         likes: likes,
         firstName: user.firstName ?? "Unknown",
+        color: color,
       );
 
   @override

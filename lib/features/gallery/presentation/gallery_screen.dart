@@ -4,7 +4,6 @@ import 'package:gallery_app/features/gallery/presentation/bloc/gallery_bloc.dart
 import 'package:gallery_app/features/gallery/presentation/widgets/image_grid_section.dart';
 import 'package:gallery_app/injection.dart';
 
-
 class GalleryScreen extends StatelessWidget {
   const GalleryScreen({Key? key}) : super(key: key);
 
@@ -22,8 +21,12 @@ class GalleryScreen extends StatelessWidget {
       child: LayoutBuilder(
           builder: (BuildContext context, BoxConstraints constraints) {
         return Scaffold(
+          appBar: AppBar(
+            title: const Text("Gallery"),
+          ),
+          backgroundColor: Colors.white,
           body: SafeArea(
-            child: ImageGridSection()
+            child: ImageGridSection(),
           ),
         );
       }),
