@@ -14,9 +14,7 @@ git clone https://github.com/prabhatsdp/gallery_app_flutter.git
 3. Connect your physical device or emulator if not already connected.
 4. Run below command to build and run the app on your device
 <br />
-```
-    flutter run --dart-define=API_KEY=YOUR_UNSPLASH_ACCESS_KEY
-```
+```flutter run --dart-define=API_KEY=YOUR_UNSPLASH_ACCESS_KEY```
 
 A few resources to get you started if this is your first Flutter project:
 
