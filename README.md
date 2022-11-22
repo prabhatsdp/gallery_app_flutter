@@ -7,16 +7,16 @@ Make sure you have installed and setup the Flutter SDK on your system. You can c
 <br />
 1. Clone this repository by running below command from command line.
 <br/><br/>
-```kotlin
+```
 git clone https://github.com/prabhatsdp/gallery_app_flutter.git
 ```
 2. Navigate to project directory and run ```flutter pub get``` command in terminal.
 3. Connect your physical device or emulator if not already connected.
 4. Run below command to build and run the app on your device
 <br />
-```kotlin
+````
 flutter run --dart-define="API_KEY=YOUR_UNSPLASH_ACCESS_KEY"
-```
+````
 
 
 
